@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "83385e0e-e645-4830-9469-5ba8d9f44289",
+		"name": "ImageManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODE3MzU2MzMsInVzZXJfbmFtZSI6IlNhbmtldCIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIwZWU5ODQ1ZS1mZTFjLTRmZjctYjdmNy1lNDViYjhhZDIyMzEiLCJjbGllbnRfaWQiOiJzeW5jaHJvbnkiLCJzY29wZSI6WyJ1c2VyX2luZm8iXX0.FVlne5RgSGPTuqgwKwXrZRh52hJBIOEE1WYjMdjCCiQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"ekta\",\r\n    \"password\" : \"ekta\",\r\n    \"fullName\" : \"Ekta\",\r\n    \"email\" : \"abc@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"ekta\",\r\n    \"password\" : \"ekta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/pahujek/OneDrive - Manulife/Pictures/Microsoft.Windows.Photos_8wekyb3d8bbwe!App/nature.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/image/upload?userName=ekta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"image",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "ekta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Image",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/image/delete/6hcb5Ty?userName=ekta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"image",
+						"delete",
+						"6hcb5Ty"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "ekta"
+						},
+						{
+							"key": "fileId",
+							"value": "6hcb5Ty",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/image/delete/5wVnQvJ?userName=ekta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"image",
+						"delete",
+						"5wVnQvJ"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "ekta"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
